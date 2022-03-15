@@ -1,0 +1,4 @@
+SELECT pilot.first_name as `Имя`, pilot.last_name as `Фамилия`, count(airline_pilot.id) as `Количество полётов` FROM airline_pilot
+ INNER JOIN airline on airline.airline_id = airline_pilot.airline_id
+ INNER JOIN pilot on pilot.pilot_id = airline_pilot.pilot_id
+ WHERE airline.model ='Boeing' GROUP BY pilot.first_name;

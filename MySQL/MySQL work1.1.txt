@@ -1,0 +1,5 @@
+SELECT client.last_name as `Фамилии клиентов` FROM `view`
+ RIGHT JOIN `client` on client.id = view.client_id
+ INNER JOIN `apartment` on apartment.id = view.apartment_id
+ WHERE apartment.rooms =3 GROUP BY client.last_name
+ HAVING sum(view.id)>1;
